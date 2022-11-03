@@ -1,0 +1,39 @@
+#include <stdio.h>
+#define SET_BIT(NUM,POS)    NUM|(1<<POS)
+#define GET_BIT(NUM,POS)    NUM&(1<<POS)
+#define CLR_BIT(NUM,POS)    NUM&=~(1<<POS)
+int main() {
+
+int x=139934;
+int size=sizeof(x)*8;
+int arr[50]={0};
+int arr2[]={0};
+int result=0;
+int y=0;
+int counter=0;
+
+for(int i=0;i<size;i++){
+    if((GET_BIT(x,i))==0){
+        counter++;
+        arr[y]=i;
+        y++;
+    }
+    else{}}
+
+for(int i=0;i<counter;i++){
+   
+    if(i==0){
+        result=arr[i+1];
+         
+    }
+    else{
+    result=(arr[i+1]-arr[i-1])-1;}
+     
+    if(arr2[0]<result){
+        arr2[0]=result;
+      
+    }
+    else{}
+}
+printf("%d",arr2[0]);
+}

@@ -1,0 +1,15 @@
+//insert_m_in_n
+#include <stdio.h>
+#include<math.h>
+int main() {
+    unsigned  int n,m;
+    unsigned  int i=2;
+    unsigned  int j=6;
+    printf("enter the n adn m numbers\n");
+    scanf("%hu %hu",&n,&m);
+    unsigned  int size=(unsigned  int)(sizeof(n)*8);
+    unsigned  int result=(((unsigned  int)((pow(2,size)-1)-(pow(2,j+1)-1)+(pow(2,i)-1)))&(n))|(m<<i);
+     printf("%hu",result);
+
+    return 0;
+}

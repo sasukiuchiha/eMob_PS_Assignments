@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define SET_BIT(NUM,POS)    NUM|=(1<<POS)
+#define GET_BIT(NUM,POS)    NUM&(1<<POS)
+#define CLR_BIT(NUM,POS)    NUM&=~(1<<POS)
+void fun(char x,char y){
+    int counter=0;
+    for(int i=0;i<(sizeof(x)*8);i++){
+        if((GET_BIT(x,i))==(GET_BIT(y,i))){
+            
+        }
+        else{
+            counter++;
+          
+        }
+    }
+   printf("%d",counter);
+    
+}
+int main() {
+  fun(29,16);
+    return 0;}
