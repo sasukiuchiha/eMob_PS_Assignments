@@ -1,0 +1,223 @@
+• Get The kth Bit
+#include <stdio.h>
+#define GET_BIT(NUM,POS)    NUM&=(1<<POS)
+int main() {
+    int x=0,pos=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    printf("\nenter the bit pos\n");
+    scanf("%d",&pos);
+if((GET_BIT(x,pos))>0){
+    printf("this bit equal=%d",1);}
+else if((GET_BIT(x,pos))==0){
+     printf("this bit equal=%d",0);
+}
+else{
+
+}   
+/*******************************************************************/   
+• Set The kth Bit
+
+
+#include <stdio.h>
+#define SET_BIT(NUM,POS)    NUM|=(1<<POS)
+int main() {
+    int x=0,pos=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    printf("\nenter the bit pos\n");
+    scanf("%d",&pos);
+     SET_BIT(x,pos);
+
+}  
+
+/******************************************************/
+• Set the rightmost 0-bit in a word .
+
+#include <stdio.h>
+#define SET_BIT(NUM,POS)    NUM|=(1<<POS)
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    x=((~x)+1)&x;
+
+}
+/****************************************************/
+• Set the trailing 0s in a word .
+
+#include <stdio.h>
+#define SET_BIT(NUM,POS)    NUM|=(1<<POS)
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    x=x|(x-1);
+
+}
+
+/*************************************************/
+
+• Clear The kth Bit
+#define CLR_BIT(NUM,POS)    NUM&=~(1<<POS)
+int main() {
+    int x=0,pos=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    printf("\nenter the bit pos\n");
+    scanf("%d",&pos);
+     CLR_BIT(x,pos);
+}
+
+/**********************************************/
+• Clear the rightmost 1-bit .
+
+#include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+
+X=x&(x-1);}
+/*********************************************/
+• Clear the trailing 1s .
+
+#include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+
+X=x&(x+1);}
+
+/**********************************************/
+
+• Clear all bits from MSB through k inclusive 
+
+#include <stdio.h>
+int main() {
+    int x=0,K=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    PRINTF("ENTER THE K POS\n");
+    scanf("%d",&k);
+
+x=((1<<k)-1)&x;}
+
+/*************************************************/
+• Clear all bits from k through LSB inclusive
+
+ #include <stdio.h>
+int main() {
+    int x=0,K=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    PRINTF("ENTER THE K POS\n");
+    scanf("%d",&k);
+
+x=(-1<<k)&x;}
+
+/********************************************************/
+• Toggle The kth Bit
+
+ #include <stdio.h>
+#define TGL_BIT(NUM,POS)    NUM^=(1<<POS)
+int main() {
+    int x=0,K=0;
+    printf("enter the number");
+    scanf("%d",&x);
+    PRINTF("ENTER THE K POS\n");
+    scanf("%d",&k);
+TGL_BIT(x,k);
+
+/************************************************************************/
+• Create a word with a single 1-bit at the position of the rightmost 0-bit
+
+ #include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+x=~x & (x + 1);}
+
+/***********************************************************************/
+
+• Create a word with a single 1-bit at the position of the rightmost 1-bit
+ #include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+x=(~((x-1)|(~x)))+1;}
+
+/*********************************************************************/
+
+• Create a word with 1s at position of trailing 0s
+ #include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+x=(x-1)^x;}
+
+/**********************************************************************/
+
+• Isolate the rightmost 1-bit 
+ #include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+x=x & (-x);}
+
+/**************************************************************************/
+• Create a word with 0s at trailing 1s
+
+ #include <stdio.h>
+int main() {
+    int x=0;
+    printf("enter the number");
+    scanf("%d",&x);
+x=~x | (x+1);}
+
+/*************************************************************************/
+
+• Extract a Bit Field [Extract an Rs from ISA]
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+    unsigned  int n,m;
+    unsigned  int i=2;
+    unsigned  int j=6;
+    printf("enter the n adn m numbers\n");
+    scanf("%hu %hu",&n,&m);
+    unsigned  int size=(unsigned  int)(sizeof(n)*8);
+    unsigned  int result=(((unsigned  int)(~((pow(2,size)-1)-(pow(2,j+1)-1)+(pow(2,i)-1))))&(n));
+     printf("%hu",result);
+
+    return 0;
+}
+
+/***************************************************************/
+• Set a Bit Field [Set an Immediate In ISA]
+
+#include <stdio.h>
+#include<math.h>
+int main() {
+    unsigned  int n,m;
+    unsigned  int i=2;
+    unsigned  int j=6;
+    printf("enter the n adn m numbers\n");
+    scanf("%hu %hu",&n,&m);
+    unsigned  int size=(unsigned  int)(sizeof(n)*8);
+    unsigned  int result=(((unsigned  int)((pow(2,size)-1)-(pow(2,j+1)-1)+(pow(2,i)-1)))&(n))|((unsigned  int)(pow(2,size)-1));
+     printf("%hu",result);
+
+    return 0;
+}
+
+/**************************************************************************/
+• How to keep the alignment of instructions in the machine .
+
+by putting the first two bits in program counter with 0
