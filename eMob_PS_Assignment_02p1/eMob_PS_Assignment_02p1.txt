@@ -1,0 +1,51 @@
+#ifndef BIT_UTILS_H
+#define BIT_UTILS_H
+​
+#define SET_BIT(REG,Bit_NO)     (REG) |= (1<<(Bit_NO)) // For example !
+#define CLR_BIT(REG,Bit_NO)          (REG) &= ~(1<<(Bit_NO))
+// Get The Bit number Bit_NO	
+#define GET_BIT(REG,Bit_NO)	  (REG) &= (1<<(Bit_NO))
+// Right Shift by No
+#define RSHFT_REG(REG,NO)	  (REG) >>=NO	
+// Left Shift by NO
+#define LSHFT_REG(REG,NO)	  (REG) <<=NO
+// Circular Right Shift		  
+#define CRSHFT_REG(REG,NO)      (REG)=(REG<<(((sizeof(REG)*8)-1)-NO))|(REG>>NO)
+// Circular Left Shift
+#define CLSHFT_REG(REG,NO)       (REG)=(REG>>(((sizeof(REG)*8)-1)-NO))|(REG<<NO)
+// Assign a Value to a Register
+#define ASSIGN_REG(REG,VALUE)       REG=VALUE
+// Set The Register [1s]
+#define SET_REG(REG)		   REG=~(REG&0)
+// Clear the Register [0s]
+#define CLR_REG(REG)		   REG=(REG&0)
+// Toggle a Bit in Register
+#define TGL_BIT(REG,Bit_NO)	  (REG)^=(1<<(Bit_NO))
+// Toggle a Register Value
+#define TGL_REG(REG)		  (REG)^=(~(REG&0))
+// Set The High Nibble in a Register
+#define SET_H_NIB(REG)		  (REG)|=((~(REG&0))<<((size0f(REG)*8)/2))
+// Set The Low Nibble in a Register
+#define SET_L_NIB(REG)		  (REG)|=((~(REG&0))>>((size0f(REG)*8)/2)))
+// Clear The High Nibble in a Register
+#define CLR_H_NIB(REG)		  (REG)&=((~(REG&0))>>((size0f(REG)*8)/2)))
+// Clear The Low Nibble in a Register
+#define CLR_L_NIB(REG)		 (REG)&=((~(REG&0))<<((size0f(REG)*8)/2))
+// Get The High Nibble in a Register
+#define GET_H_NIB(REG)		 (REG)&((~(REG&0))<<((size0f(REG)*8)/2))
+// Get The Low Nibble in a Register
+#define GET_L_NIB(REG)		 (REG)&((~(REG&0))>>((size0f(REG)*8)/2)))
+// Assign The High Nibble in a Register
+#define ASSIGN_H_NIB(REG,VALUE) (REG)|=VALUE<<((size0f(REG)*8)/2))
+// Assign the Low Nibble in a Register
+#define ASSIGN_L_NIB(REG,VALUE) (REG)|=(VALUE&((~(REG&0))>>((size0f(REG)*8)/2))))
+// Toggle the High Nibble in a Register
+#define TGL_H_NIB(REG)          (REG)^=((~(REG&0))<<((size0f(REG)*8)/2))
+// Toggle the Low Nibble in a Register
+#define TGL_L_NIB(REG)		  (REG)^=((~(REG&0))>>((size0f(REG)*8)/2)))
+// Swap the Nibbles in a Register
+#define SWAP_NIB(REG)		  REG=(REG>>((size0f(REG)*8)/2))|(REG<<((size0f(REG)*8)/2))
+​
+​
+​
+#endif
