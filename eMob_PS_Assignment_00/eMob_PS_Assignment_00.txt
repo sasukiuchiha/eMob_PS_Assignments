@@ -1,0 +1,31 @@
+why memset work with zero and one?
+ 
+For simplicity, 0 in 8 bits is just 00000000 and -1 is 11111111
+
+so popularly, when we use them with 0 and -1 for say integers, the internal binary representation is finally either 0 or -1
+
+However, we can put any value, and expect the final value say of an int. E.g. if you memset value 5 in 4 bytes int we expect it to be in its final 32 bit:
+
+00000101 00000101 00000101 00000101
+
+where 00000101 = 5
+
+/***************************************
+
+why startup code intialize global and static variables with zero?
+-because that is the standard of the c
+
+/**************************************
+
+How can we swap 2 variables without using a template variable ?
+• Follow-up :- Why is this true ?
+
+by using ^ operator
+
+why?
+for example
+i will swap between x,y 
+
+x = x ^ y;
+y = x ^ y;   //y=x^y^y   so y=x;
+x = x ^ y;   //x=x^y^x   so x=y;
